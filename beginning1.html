@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF and Audio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #eff5e0; /* Light green background color */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            font-family: 'Khand', sans-serif; /* Change font family */
+        }
+
+        .pdf-container {
+            padding: 2rem;
+            border: 2px solid #ccc; /* Add border for visual appeal */
+            border-radius: 10px; /* Round the corners */
+            background-color: #f1f1f1; /* White background */
+            margin-bottom: 2rem;
+        }
+
+        .header {
+            background-color: #222022; /* Lilac background color */
+            color: #fff; /* White text color */
+            padding: 1rem 0; /* Adjust padding */
+            text-align: center; /* Center align text */
+        }
+
+        .header h1 {
+            font-size: 1.8rem; /* Increase font size */
+            font-weight: 300; /* Light font weight */
+            margin: 0; /* Remove margin */
+        }
+
+        .home-btn {
+            background-color: #6c757d; /* Gray button background color */
+            color: #fff; /* White text color */
+            border: none; /* Remove border */
+            padding: 0.5rem 1rem; /* Adjust padding */
+            border-radius: 5px; /* Add border radius */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+
+        .home-btn:hover {
+            background-color: #495057; /* Darker gray on hover */
+        }
+
+        .logo {
+            height: 40px; /* Enlarge the logo */
+        }
+
+        .highlighted1 {
+            color: #cf51c9; /* Orange color for "Matt 6:33 Seekers" */
+        }
+
+        .highlighted2 {
+            color: #f5faf5; /* Green color for "The Beginning Part 4" */
+        
+        }
+         /* Custom styling for the audio section */
+         .audio-navbar {
+            background-color: #b8e0ae; /* Change background color */
+            padding: 1rem; /* Add padding */
+        }
+
+        .form-select {
+            background-color: #cbd5e0; /* Change background color */
+            color: #2d3748; /* Change text color */
+            padding: 0.5rem; /* Add padding */
+            border-radius: 5px; /* Add border radius */
+        }
+
+        /* Change color of audio controls */
+        audio {
+            background-color: #cbd5e0; /* Change background color */
+            color: #2d3748; /* Change text color */
+            border-radius: 5px; /* Add border radius */
+        }
+    </style>
+</head>
+<body class="bg-gray-200">
+    <header class="header">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="img\logo.png" alt="Logo" class="h-8 mr-2 logo"> <!-- Enlarge the logo -->
+                    <h1 class="m-0 text-2xl"><span class="highlighted1">Matt 6:33 Seekers</span>: <span class="highlighted2">The Beginning Part 1</span></h1>
+                </div>
+                <a href="topic.html" class="home-btn">Topics</a> <!-- Changed to an anchor tag with href -->
+            </div>
+        </div>
+    </header>
+
+<nav class="navbar navbar-light bg-light audio-navbar">
+    <div class="container-fluid">
+        <select id="audio-select" class="form-select me-2">
+            <option value="" disabled selected>Select an audio file</option>
+            <option value="FullScope\KeysA.mp4">Audio File 1</option>
+            <option value="FullScope\KeysB.mp4">Audio File 2</option>
+            <option value="audio3.mp3">Audio File 3</option>
+            <!-- Add more audio options as needed -->
+        </select>
+        <audio id="audio-player" class="w-full" controls></audio>
+    </div>
+</nav>
+
+<div class="pdf-container">
+    <embed id="pdf-viewer" src="In_the_Beginning\Part2\Part 2.pdf" width="100%" height="600px" />
+</div>
+
+<script>
+    var audioPlayer = document.getElementById("audio-player");
+    var audioSelect = document.getElementById("audio-select");
+
+    audioSelect.addEventListener("change", function() {
+        var selectedAudio = audioSelect.options[audioSelect.selectedIndex].value;
+        if (selectedAudio) {
+            audioPlayer.src = selectedAudio;
+        }
+    });
+</script>
+</body>
+</html>

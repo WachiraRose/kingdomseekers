@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Study App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        body {
+            font-family: 'Redressed', cursive; /* Calligraphic font */
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            background-color: #f3e5f5; /* Light purple background */
+        }
+        .card-content {
+            color: #333333; /* Dark text color */
+            padding: 20px;
+        }
+        .btn-purple {
+            background-color: #9c27b0; /* Purple color */
+        }
+        .btn-purple:hover {
+            background-color: #ce93d8; /* Purple lighten-3 color on hover */
+        }
+        .card {
+            border-radius: 15px 15px 0 0; /* Round the corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff; /* White background */
+        }
+        .header {
+            background-color: #9c27b0; /* Purple header */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between; /* Align items to the ends */
+            align-items: center;
+        }
+        .header img {
+            margin-right: 20px; /* Add some spacing between logo and text */
+        }
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column; /* Stack items vertically */
+                align-items: center; /* Align items to the center */
+                padding: 10px;
+            }
+            .header img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="center-align mb-8 header">
+        <img src="img/logo.png" alt="Logo" class="mb-4">
+        <div>
+            <h2 class="text-3xl font-bold">Kingdom Seekers Bible Study</h2>
+            <h5 class="mt-2">Presented by Pastor Eunice Mungai</h5>
+        </div>
+    </header>
+    
+    <div class="container" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+        <div class="row">
+            <div class="col s12 m8 offset-m2">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Today's Verse</span>
+                        <p class="flow-text" id="verse-text">Loading...</p>
+                        
+                    </div>
+                    <div class="card-action">
+                        <a href="topic.html" class="waves-effect waves-light btn btn-purple">Start</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        // Bible verses array
+        const bibleVerses = [
+            "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life. - John 3:16",
+            "For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope. - Jeremiah 29:11",
+            // Add more verses as needed
+        ];
+
+        // Function to get a random verse
+        function getRandomVerse() {
+            return bibleVerses[Math.floor(Math.random() * bibleVerses.length)];
+        }
+
+        // Function to update the verse text
+        function updateVerse() {
+            const verseText = document.getElementById('verse-text');
+            verseText.textContent = getRandomVerse();
+        }
+
+        // Update verse on page load
+        updateVerse();
+    </script>
+</body>
+</html>
