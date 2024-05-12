@@ -4,43 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Topics</title>
+     <!-- Add link to favicon -->
+     <link rel="icon" type="image/png" href="favicon.png">
     <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-image: url('bibilia.jpg'); /* Background image URL */
+            background-size: cover; /* Cover the entire page */
+            background-repeat: no-repeat; /* No repeating of the background image */
+            background-attachment: fixed; /* Fixed background position */
+            color: #333; /* Text color */
         }
         header {
             text-align: center;
-            margin-bottom: 40px;
-            background-color: #9c27b0; /* Purple color class */
+            padding: 10px 0;
+            background-color: rgba(17, 16, 17, 0.8); /* Purple color class with transparency */
             color: #fff;
-            padding: 20px 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         header img {
-            height: 80px;
-            margin-bottom: 20px;
+            height: 60px;
+            margin-bottom: 10px;
         }
-
+        .word-carousel {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            font-size: 2em; /* Increased font size */
+        }
+        .word-carousel span {
+            animation: marquee 10s linear infinite;
+            display: inline-block;
+            padding-right: 20px; /* Space between words */
+            color: #fff;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
         .home-btn {
-            background-color: #6c757d; /* Gray button background color */
-            color: #fff; /* White text color */
+            background-color: rgb(184, 35, 127) ; /* Transparent background */
+            color: #eee6e6; /* Black text color */
             border: none; /* Remove border */
             padding: 0.5rem 1rem; /* Adjust padding */
             border-radius: 5px; /* Add border radius */
             cursor: pointer; /* Change cursor to pointer on hover */
+            font-size: 1.2em; /* Increased font size */
         }
-
         .home-btn:hover {
-            background-color: #495057; /* Darker gray on hover */
+            background-color: #5f5c5f; /* Purple color on hover */
+            color: #fff; /* White text color on hover */
         }
         .study-topic {
-            margin-bottom: 20px;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(90, 87, 89, 0.8); /* White background with transparency */
+            border-radius: 10px; /* Rounded corners */
         }
-
-        
         .study-topic ul {
             list-style-type: none;
             padding: 0;
@@ -52,21 +79,27 @@
             margin-left: 20px;
         }
         .study-topic a {
-            color: #9c27b0; /* Purple color class */
+            color: #f6f2f7; /* Purple color class */
+            font-size: larger;
             text-decoration: none;
         }
         .study-topic a:hover {
             text-decoration: underline;
+        }
+        .collapsible-header {
+            font-weight: bold; /* Bold font weight */
+            font-size: 2em; /* 2px larger font size */
         }
     </style>
 </head>
 <body>
     <header>
         <img src="img/logo.png" alt="Bible Study Logo">
-        <h1 class="text-3xl font-bold">Bible Study</h1>
-    </div>
-    <a href="index.html" class="home-btn">Home</a> <!-- Changed to an anchor tag with href -->
-</div>
+        <div class="word-carousel">
+            <span>Be diligent in studying the word of God.</span>
+            <!-- Add more words as needed -->
+        </div>
+        <a href="index.html" class="home-btn">Home</a> <!-- Changed to an anchor tag with href -->
     </header>
 
     <div class="container study-topic">
@@ -77,14 +110,14 @@
                     <ul>
                         <li><a href="beginning1.html">Part 1</a></li>
                         <li><a href="beginning2.html">Part 2</a></li>
-                        <li><a href="test2.html">Part 3</a></li>
+                        <li><a href="beginning3.html">Part 3</a></li>
                         <li><a href="beginning4.html">Part 4</a></li>
                         <li><a href="beginning5.html">Part 5</a></li>
                     </ul>
                 </div>
             </li>
-            <li>
-                <div class="collapsible-header">Topic 2</div>
+            <!--li>
+                <!div class="collapsible-header">Topic 2</div>
                 <div class="collapsible-body">
                     <ul>
                         <li><a href="#">Subtopic 2.1</a></li>
@@ -102,7 +135,7 @@
                         <li><a href="#">Subtopic 3.3</a></li>
                     </ul>
                 </div>
-            </li>
+            </li-->
         </ul>
     </div>
 

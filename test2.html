@@ -3,16 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF and Audio</title>
+    <title>The Beginning Part 1</title>
+    <!-- Add link to favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-    <!-- PDF.js CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf_viewer.min.css" integrity="sha512-kQO2X6Ls8Fs1i/pPQaRWkT40U/SELsldCgg4njL8zT0q4AfABNuS+xuy+69PFT21dow9T6OiJF43jan67GX+Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- PDF.js script source -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.js" integrity="sha512-YpDGqNqltNyZuAMoY4G5by5aADkxPbJi72ZUdxpg1D4Ukx4OSrJ5z6V0zBb1Dls+sPJ12ZTh4lTPNR8Qb0ky4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <style>
         body {
             background-color: #eff5e0;
@@ -27,6 +22,9 @@
             border-radius: 10px;
             background-color: #f1f1f1;
             margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .header {
@@ -43,7 +41,7 @@
         }
 
         .home-btn {
-            background-color: #6c757d;
+            background-color: #c51e9b;
             color: #fff;
             border: none;
             padding: 0.5rem 1rem;
@@ -71,6 +69,7 @@
             background-color: #b8e0ae;
             padding: 1rem;
             display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 
@@ -79,31 +78,21 @@
             color: #2d3748;
             padding: 0.5rem;
             border-radius: 5px;
-            flex: 1; /* Grow to fill available space */
-        }
-
-        #download-audio-container {
-            margin-left: 1rem;
-        }
-
-        #download-audio-link {
-            background-color: #3490dc;
-            color: #fff;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        #download-audio-link:hover {
-            background-color: #2779bd;
         }
 
         audio {
             background-color: #cbd5e0;
             color: #2d3748;
             border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -113,7 +102,7 @@
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <img src="img\logo.png" alt="Logo" class="h-8 mr-2 logo">
-                    <h1 class="m-0 text-2xl"><span class="highlighted1">Matt 6:33 Seekers hellooo</span>: <span class="highlighted2">The Beginning Part 3</span></h1>
+                    <h1 class="m-0 text-2xl"><span class="highlighted1">Matt 6:33 Seekers</span>: <span class="highlighted2">The Beginning Part 1</span></h1>
                 </div>
                 <a href="topic.html" class="home-btn">Topics</a>
             </div>
@@ -122,47 +111,33 @@
 
     <nav class="navbar navbar-light bg-light audio-navbar">
         <div class="container-fluid">
-            <div class="d-flex align-items-center">
-                <select id="audio-select" class="form-select me-2">
-                    <option value="" disabled selected>Select an audio file</option>
-                    <option value="In_the_Beginning\Part3\March2_2024.mp4">Missing</option>
-                    <option value="In_the_Beginning\Part3\March2_2024.mp4">March 2nd 2024</option>
-                    <option value="In_the_Beginning\Part3\March9_2024.mp4">March 9th 2024</option>
-                    <option value="In_the_Beginning\Part3\March23_2024.mp4">March 23rd 2024</option>
-                </select>
-                <div id="download-audio-container">
-                    <a id="download-audio-link" href="#" download>Download Audio</a>
-                </div>
-            </div>
+            <select id="audio-select" class="form-select me-2">
+                <option value="" disabled selected>Select an option</option>
+                <!--option value="FullScope\KeysA.mp4">Audio File 1</option>
+                <option value="FullScope\KeysB.mp4">Audio File 2</option>
+                <option value="audio3.mp3">Audio File 3</option-->
+            </select>
+            <audio id="audio-player" class="w-full" controls></audio>
+            <a id="download-audio" class="btn btn-primary" style="display: none;">Download Audio</a>
         </div>
     </nav>
 
     <div class="pdf-container">
-        <embed id="pdf-viewer" src="In_the_Beginning\Part3\Part 3.pdf" width="100%" height="600px" />
+        <embed id="pdf-viewer" src="In_the_Beginning\Part2\Part 2.pdf" width="100%" height="600px" />
+        <a id="download-pdf" href="In_the_Beginning\Part2\Part 2.pdf" class="btn btn-primary">Download PDF</a>
     </div>
-
-    <!-- Download options for audio and PDF files -->
-    <div class="container mx-auto px-4">
-        <div class="mt-4">
-            <a href="In_the_Beginning\Part3\Part%203.pdf" download class="btn btn-primary">Download PDF</a>
-        </div>
-    </div>
-
-    <!-- Audio player -->
-    <audio id="audio-player" class="w-full" controls></audio>
 
     <script>
         var audioPlayer = document.getElementById("audio-player");
         var audioSelect = document.getElementById("audio-select");
-        var downloadAudioLink = document.getElementById("download-audio-link");
+        var downloadAudio = document.getElementById("download-audio");
 
         audioSelect.addEventListener("change", function() {
             var selectedAudio = audioSelect.options[audioSelect.selectedIndex].value;
             if (selectedAudio) {
                 audioPlayer.src = selectedAudio;
-                // Update download link
-                downloadAudioLink.href = selectedAudio;
-                console.log("Selected audio:", selectedAudio); // Debug statement
+                downloadAudio.href = selectedAudio;
+                downloadAudio.style.display = "inline-block";
             }
         });
     </script>
