@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Topics</title>
-     <!-- Add link to favicon -->
-     <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Add link to favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
     <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
@@ -77,6 +77,9 @@
         }
         .study-topic li.subtopic {
             margin-left: 20px;
+            padding: 10px; /* Added padding */
+            background-color: rgba(90, 87, 89, 0.6); /* Lighter background color */
+            border-radius: 5px; /* Rounded corners */
         }
         .study-topic a {
             color: #f6f2f7; /* Purple color class */
@@ -89,6 +92,34 @@
         .collapsible-header {
             font-weight: bold; /* Bold font weight */
             font-size: 2em; /* 2px larger font size */
+        }
+        .subtopic ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .subtopic li {
+            margin-bottom: 5px;
+        }
+        .subtopic a {
+            color: #f6f2f7; /* Purple color class */
+            font-size: larger;
+            text-decoration: none;
+        }
+        .subtopic a:hover {
+            text-decoration: underline;
+        }
+
+        .subtopic .collapsible-header {
+            background-color: rgba(90, 87, 89, 0.6);; /* Grey background color */
+            /*font-weight: bold;  Bold font weight */
+            /*font-size: 2em;  2px larger font size */
+        }
+
+        .sub-sub-topic {
+            margin-left: 40px; /* Adjust the indentation for sub-sub-topics */
+            padding: 10px; /* Added padding */
+            background-color: rgba(90, 87, 89, 0.6); /* Lighter background color */
+            border-radius: 5px; /* Rounded corners */
         }
     </style>
 </head>
@@ -119,11 +150,33 @@
             <li>
                 <div class="collapsible-header">Fullscope of Scripture</div>
                 <div class="collapsible-body">
-                    <ul>
-                        <li><a href="attributes.html">The Attribute of God</a></li>
-                        <li><a href="keys.html">Keys to Understanding and Interpreting Scripture</a></li>
-                        <li><a href="foundation.html">The Foundation</a></li>
-                        <li><a href="unforivablesin.html">Willfull sin/Unforgivable sin</a></li>
+                    <ul class="study-topic collapsible popout">
+                        <li class="subtopic"><a href="attributes.html">The Attributes of the Word of God</a></li>
+                        <li class="subtopic">
+                            <a href="#" class="collapsible-header">Keys to Understanding and Interpreting Scripture</a>
+                            <div class="collapsible-body">
+                                <ul class="subtopic collapsible">
+                                    <li class="sub-sub-topic"><a href="key1.html">Studying Scripture the way Jesus taught His disciples</a></li>
+                                    <li class="sub-sub-topic"><a href="subsubtopic2.html">The Holy Spirit is our teacher. How does he teach?</a></li>
+                                    <li class="sub-sub-topic"><a href="subsubtopic2.html">Understanding Types and Antitypes</a></li>
+                                    <li class="sub-sub-topic"><a href="subsubtopic2.html">The Septenary arrangment of the scripture</a></li>
+                                    <li class="sub-sub-topic"><a href="subsubtopic2.html">Parables, Metaphors and Figurative Language</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="subtopic">
+                            <a href="#" class="collapsible-header">The Foundation</a>
+                            <div class="collapsible-body">
+                                <ul class="subtopic collapsible">
+                                    <li class="sub-sub-topic"><a href="subsubtopic1.html">Introduction</a></li>
+                                    <li class="sub-sub-topic"><a href="subsubtopic2.html">3a</a></li>
+                                    <li class="sub-sub-topic"><a href="subsubtopic2.html">3b</a></li>
+                                    <li class="sub-sub-topic"><a href="subsubtopic2.html">3c</a></li>
+                                    <li class="sub-sub-topic"><a href="subsubtopic2.html">3d</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="subtopic"><a href="unforivablesin.html">Willfull sin/Unforgivable sin</a></li>
                     </ul>
                 </div>
             </li>
