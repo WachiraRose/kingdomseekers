@@ -111,6 +111,35 @@
         .dropdown-submenu > a::after {
             content: "";
         }
+
+         /* Media queries for small screens */
+    @media (max-width: 768px) {
+        .header h1 {
+            font-size: 1.5rem;
+        }
+
+        .home-btn, .topics-btn {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-menu {
+            width: 100%;
+            text-align: center;
+        }
+
+        .dropdown-submenu:hover > .dropdown-menu {
+            position: relative;
+            left: 0;
+            margin: 0;
+            display: block;
+            width: 100%;
+        }
+
+        .dropdown-menu > li > .dropdown-menu {
+            margin-top: 0;
+        }
+    }
     </style>
 </head>
 <body class="bg-gray-200">
@@ -122,7 +151,7 @@
                     <h1 class="m-0 text-2xl"><span class="highlighted1">Matt 6:33 Seekers</span>: <span class="highlighted2">The Foundation: Introduction</span></h1>
                 </div>
                 <div>
-                    <button class="home-btn" onclick="location.href='index.html'">Home</button>
+                    <button class="home-btn" onclick="location.href='topic.html'">Home</button>
                     <div class="dropdown" style="display:inline-block;">
                         <button class="topics-btn dropdown-toggle" type="button" id="topicsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             Topics
