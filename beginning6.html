@@ -38,8 +38,8 @@
         }
 
         .home-btn, .topics-btn {
-            background-color: #c51e9b;
-            color: #fff;
+            background-color: #222022;
+            color: #e70d9f;
             border: none;
             padding: 0.5rem 1rem;
             border-radius: 5px;
@@ -50,6 +50,7 @@
         .home-btn:hover, .topics-btn:hover {
             background-color: #495057;
         }
+
 
         .logo {
             height: 40px;
@@ -92,8 +93,7 @@
             margin-top: -1px;
         }
 
-        .dropdown-submenu:hover > .dropdown-menu,
-        .dropdown-submenu:focus-within > .dropdown-menu {
+        .dropdown-submenu:hover > .dropdown-menu {
             display: block;
         }
 
@@ -113,38 +113,6 @@
         .dropdown-submenu > a::after {
             content: "";
         }
-
-        /* Media queries for small screens 
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.5rem;
-            }
-
-            .home-btn, .topics-btn {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.9rem;
-            }
-
-            .dropdown-menu {
-                width: 100%;
-                text-align: center;
-                position: static;
-            }
-
-            .dropdown-menu.show {
-                display: block;
-            }
-
-            .dropdown-submenu:hover > .dropdown-menu,
-            .dropdown-submenu:focus-within > .dropdown-menu {
-                display: block;
-            }
-
-            .dropdown-menu > li > .dropdown-menu {
-                margin-top: 0;
-                position: static;
-            }
-        }*/
     </style>
 </head>
 <body class="bg-gray-200">
@@ -159,7 +127,7 @@
                     <button class="home-btn" onclick="location.href='topic.html'">Home</button>
                     <div class="dropdown" style="display:inline-block;">
                         <button class="topics-btn dropdown-toggle" type="button" id="topicsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            Topic
+                            Topics
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="topicsDropdown">
                             <!-- In the Beginning -->
@@ -178,7 +146,7 @@
                             <li class="dropdown-submenu">
                                 <a class="dropdown-item dropdown-toggle main-topic" href="#">Fullscope of Scripture</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item sub-topic" href="attributes.html">The Attributes of the Word of God</a></li>
+                                    <li><a class="dropdown-item sub-topic" href="FullscopeOfScripture/KeystoUnderstandingandInterpretingScripture/key2/key2.html">The Attributes of the Word of God</a></li>
                                     <li class="dropdown-submenu">
                                         <a class="dropdown-item dropdown-toggle sub-topic" href="#">Keys to Understanding and Interpreting Scripture</a>
                                         <ul class="dropdown-menu">
@@ -209,15 +177,16 @@
         </div>
     </header>
 
+
     <nav class="navbar navbar-light bg-light audio-navbar">
         <div class="container-fluid">
             <select id="audio-select" class="form-select me-2">
-                <!--option value="" disabled selected>Select an option</option>
-                <option value="FullscopeOfScripture\TheFoundation\3a\March19_2022.mp4">March 19th 2022</option>
-                <option value="FullscopeOfScripture\TheFoundation\3a\March19b_2022.mp4">b.March 19th 2022</option>
-                <option value="FullscopeOfScripture\TheFoundation\3a\March26_2022.mp4">March 26th 2022</option>
-                <option value="FullscopeOfScripture\TheFoundation\3a\April02_2022.mp4">April 2nd 2022</option>
-                <option value="FullscopeOfScripture\TheFoundation\3a\April02b_2022.mp4">b.April 2nd 2022</option-->
+                <option value="" disabled selected>Select an option</option>
+                <!--option value="In_the_Beginning\Part5\May11_2024.mp4">May 11th 2024</option>
+                <option value="In_the_Beginning\Part5\May18_2024.mp4">May 18th 2024</option>
+                <option value="In_the_Beginning\Part5\May25_2024.mp4">May 25th 2024</option>
+                <option value="In_the_Beginning\Part5\June1_2024.mp4">June 1st 2024</option>
+                <option value="audio3.mp3">Audio File 3</option-->
             </select>
             <audio id="audio-player" class="w-full" controls></audio>
             <a id="download-audio" class="btn btn-primary" style="display: none;">Download Audio</a>
@@ -230,6 +199,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script-->
     <script>
         var audioPlayer = document.getElementById("audio-player");
         var audioSelect = document.getElementById("audio-select");
