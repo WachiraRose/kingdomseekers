@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Key 1</title>
+    <title>In the Beginning Part 6</title>
     <!-- Add link to favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -37,16 +37,17 @@
             margin: 0;
         }
 
-        .home-btn {
+        .home-btn, .topics-btn {
             background-color: #c51e9b;
             color: #fff;
             border: none;
             padding: 0.5rem 1rem;
             border-radius: 5px;
             cursor: pointer;
+            margin-left: 10px;
         }
 
-        .home-btn:hover {
+        .home-btn:hover, .topics-btn:hover {
             background-color: #495057;
         }
 
@@ -91,7 +92,8 @@
             margin-top: -1px;
         }
 
-        .dropdown-submenu:hover > .dropdown-menu {
+        .dropdown-submenu:hover > .dropdown-menu,
+        .dropdown-submenu:focus-within > .dropdown-menu {
             display: block;
         }
 
@@ -111,6 +113,38 @@
         .dropdown-submenu > a::after {
             content: "";
         }
+
+        /* Media queries for small screens 
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .home-btn, .topics-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .dropdown-menu {
+                width: 100%;
+                text-align: center;
+                position: static;
+            }
+
+            .dropdown-menu.show {
+                display: block;
+            }
+
+            .dropdown-submenu:hover > .dropdown-menu,
+            .dropdown-submenu:focus-within > .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-menu > li > .dropdown-menu {
+                margin-top: 0;
+                position: static;
+            }
+        }*/
     </style>
 </head>
 <body class="bg-gray-200">
@@ -119,13 +153,13 @@
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <img src="img/logo.png" alt="Logo" class="h-8 mr-2 logo">
-                    <h1 class="m-0 text-2xl"><span class="highlighted1">Matt 6:33 Seekers</span>: <span class="highlighted2">Key 1: Studying Scripture the way Jesus taught His disciples</span></h1>
+                    <h1 class="m-0 text-2xl"><span class="highlighted1">Matt 6:33 Seekers</span>: <span class="highlighted2">In the Beginning Part 6</span></h1>
                 </div>
                 <div>
                     <button class="home-btn" onclick="location.href='topic.html'">Home</button>
                     <div class="dropdown" style="display:inline-block;">
                         <button class="topics-btn dropdown-toggle" type="button" id="topicsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            Topics
+                            Topic
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="topicsDropdown">
                             <!-- In the Beginning -->
@@ -144,7 +178,7 @@
                             <li class="dropdown-submenu">
                                 <a class="dropdown-item dropdown-toggle main-topic" href="#">Fullscope of Scripture</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item sub-topic" href="FullscopeOfScripture/KeystoUnderstandingandInterpretingScripture/key2/key2.html">The Attributes of the Word of God</a></li>
+                                    <li><a class="dropdown-item sub-topic" href="attributes.html">The Attributes of the Word of God</a></li>
                                     <li class="dropdown-submenu">
                                         <a class="dropdown-item dropdown-toggle sub-topic" href="#">Keys to Understanding and Interpreting Scripture</a>
                                         <ul class="dropdown-menu">
@@ -178,11 +212,12 @@
     <nav class="navbar navbar-light bg-light audio-navbar">
         <div class="container-fluid">
             <select id="audio-select" class="form-select me-2">
-                <option value="" disabled selected>Select an option</option>
-                <option value="FullscopeOfScripture\KeystoUnderstandingandInterpretingScripture\key1\Dec04_2021.mp4">Dec 4th 2021</option>
-                <option value="FullscopeOfScripture\KeystoUnderstandingandInterpretingScripture\key1\Dec04b_2021.mp4">b.Dec 4th 2021</option>
-                <!--option value="FullScope\KeysB.mp4">Audio File 2</option>
-                <option value="audio3.mp3">Audio File 3</option-->
+                <!--option value="" disabled selected>Select an option</option>
+                <option value="FullscopeOfScripture\TheFoundation\3a\March19_2022.mp4">March 19th 2022</option>
+                <option value="FullscopeOfScripture\TheFoundation\3a\March19b_2022.mp4">b.March 19th 2022</option>
+                <option value="FullscopeOfScripture\TheFoundation\3a\March26_2022.mp4">March 26th 2022</option>
+                <option value="FullscopeOfScripture\TheFoundation\3a\April02_2022.mp4">April 2nd 2022</option>
+                <option value="FullscopeOfScripture\TheFoundation\3a\April02b_2022.mp4">b.April 2nd 2022</option-->
             </select>
             <audio id="audio-player" class="w-full" controls></audio>
             <a id="download-audio" class="btn btn-primary" style="display: none;">Download Audio</a>
@@ -190,8 +225,8 @@
     </nav>
 
     <div class="pdf-container">
-        <embed id="pdf-viewer" src="FullscopeOfScripture\KeystoUnderstandingandInterpretingScripture\key1\key1.pdf" width="100%" height="600px" />
-        <a id="download-pdf" href="FullscopeOfScripture\KeystoUnderstandingandInterpretingScripture\key1\key1.pdf" class="btn btn-primary">Download PDF</a>
+        <embed id="pdf-viewer" src="In_the_Beginning\Part6\Part6.pdf" width="100%" height="600px" />
+        <a id="download-pdf" href="In_the_Beginning\Part6\Part6.pdf" class="btn btn-primary">Download PDF</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
