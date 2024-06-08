@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In the Beginning Part 1</title>
+    <!-- Your other meta tags, stylesheets, and scripts -->
+    <script src="../../header.js" defer></script>
+</head>
+<body class="bg-gray-200">
+   <!-- Inline header content -->
+   <div id="header-container">
+       <!-- Paste the content of header.html here -->
+       <header class="header">
+           <div class="container mx-auto px-4">
+               <div class="flex justify-between items-center">
+                   <div class="flex items-center">
+                       <img src="img/logo.png" alt="Logo" class="h-8 mr-2 logo">
+                       <h1 class="m-0 text-2xl"><span class="highlighted1">Matt 6:33 Seekers</span>: <span class="highlighted2"><span id="header-title">Page Title</span></span></h1>
+                   </div>
+                   <div>
+                       <button class="home-btn" onclick="location.href='../../topic.html'">Home</button>
+                       <div class="dropdown" style="display:inline-block;">
+                           <button class="topics-btn dropdown-toggle" type="button" id="topicsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                               Topics
+                           </button>
+                           <ul class="dropdown-menu" aria-labelledby="topicsDropdown">
+                               <!-- In the Beginning -->
+                               <li class="dropdown-submenu">
+                                   <a class="dropdown-item dropdown-toggle main-topic" href="#">In the Beginning</a>
+                                   <ul class="dropdown-menu">
+                                       <li><a class="dropdown-item sub-topic" href="beginning1.html">Part 1</a></li>
+                                       <li><a class="dropdown-item sub-topic" href="beginning2.html">Part 2</a></li>
+                                       <li><a class="dropdown-item sub-topic" href="beginning3.html">Part 3</a></li>
+                                       <li><a class="dropdown-item sub-topic" href="beginning4.html">Part 4</a></li>
+                                       <li><a class="dropdown-item sub-topic" href="beginning5.html">Part 5</a></li>
+                                       <li><a class="dropdown-item sub-topic" href="beginning6.html">Part 6</a></li>
+                                   </ul>
+                               </li>
+                               <!-- Fullscope of Scripture -->
+                               <li class="dropdown-submenu">
+                                   <a class="dropdown-item dropdown-toggle main-topic" href="#">Fullscope of Scripture</a>
+                                   <ul class="dropdown-menu">
+                                       <li><a class="dropdown-item sub-topic" href="attributes.html">The Attributes of the Word of God</a></li>
+                                       <li class="dropdown-submenu">
+                                           <a class="dropdown-item dropdown-toggle sub-topic" href="#">Keys to Understanding and Interpreting Scripture</a>
+                                           <ul class="dropdown-menu">
+                                               <li><a class="dropdown-item sub-sub-topic" href="key1.html">Studying Scripture the way Jesus taught His disciples</a></li>
+                                               <li><a class="dropdown-item sub-sub-topic" href="key2.html">The Holy Spirit is our teacher. How does he teach?</a></li>
+                                               <li><a class="dropdown-item sub-sub-topic" href="key3.html">Understanding Types and Antitypes</a></li>
+                                               <li><a class="dropdown-item sub-sub-topic" href="key4.html">The Septenary arrangement of the Scripture</a></li>
+                                               <li><a class="dropdown-item sub-sub-topic" href="key5.html">Parables, Metaphors and Figurative Language</a></li>
+                                           </ul>
+                                       </li>
+                                       <li class="dropdown-submenu">
+                                           <a class="dropdown-item dropdown-toggle sub-topic" href="#">The Foundation</a>
+                                           <ul class="dropdown-menu">
+                                               <li><a class="dropdown-item sub-sub-topic" href="3.html">Introduction</a></li>
+                                               <li><a class="dropdown-item sub-sub-topic" href="3a.html">3a</a></li>
+                                               <li><a class="dropdown-item sub-sub-topic" href="3b.html">3b</a></li>
+                                               <li><a class="dropdown-item sub-sub-topic" href="3c.html">3c</a></li>
+                                               <li><a class="dropdown-item sub-sub-topic" href="3d.html">3d</a></li>
+                                               <li><a class="dropdown-item sub-sub-topic" href="3e.html">3e</a></li>
+                                           </ul>
+                                       </li>
+                                       <li><a class="dropdown-item sub-topic" href="unforgivablesin.html">Willful Sin/Unforgivable Sin</a></li>
+                                   </ul>
+                               </li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </header>
+   </div>
+
+   <script>
+       // Call loadHeader function with the appropriate title
+       document.addEventListener('DOMContentLoaded', function() {
+           loadHeader('In the Beginning Part 1');
+       });
+   </script>
+</body>
+</html>
