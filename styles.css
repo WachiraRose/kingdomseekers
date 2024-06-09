@@ -45,6 +45,12 @@ body {
     margin: 0;
 }
 
+.header h5 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 0;
+}
+
 .home-btn, .topics-btn {
     background-color: #222022;
     color: #e70d9f;
