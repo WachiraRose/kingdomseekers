@@ -22,10 +22,10 @@
         }
 
         .archive-button {
-            position: fixed;
+            position:center;
             bottom: 4rem; /* Adjust as needed */
             right: 2rem; /* Adjust as needed */
-            background-color: #e60d0d; /* Tailwind color for purple-600 */
+            background-color: #831843; /* Tailwind color for purple-600 */
             color: white;
             padding: 10px 20px;
             border-radius: 9999px; /* Large border-radius for round shape */
@@ -38,10 +38,16 @@
             background-color: #035c0f; /* Tailwind color for purple-700 */
             transform: scale(1.05); /* Slightly scale up on hover */
         }
+
+         /* Centering the button horizontally */
+         .centered-container {
+            display: flex;
+            justify-content: center;
+        }
     </style>
 </head>
-<body class="bg-purple-200">
-    <header class="bg-pink-400 text-white text-center p-6">
+<body class="bg-purple-300">
+    <header class="bg-pink-800 text-white text-center p-6">
         <div class="container mx-auto">
             <img src="img/logo.png" alt="Logo" class="mx-auto mb-4" style="max-width: 150px;">
             <h2 class="font-redressed text-4xl">Kingdom Seekers Bible Study</h2>
@@ -58,7 +64,7 @@
                 </div>
             </div>
 
-            <div class="bg-gray-400 p-6 rounded-card shadow-lg text-center">
+            <div class="bg-gray-200 p-6 rounded-card shadow-lg text-center">
                 <div class="rounded-card mx-auto mb-4">
                     <!--img src="img/current-lesson.jpg" alt="Current Lesson Image" class="w-full h-auto"-->
                     <h2 class="text-2xl font-bold mb-4">Current Lesson:</h2>
@@ -71,7 +77,7 @@
             </div>
         </div>
 
-        <div class="bg-gray-400 p-6 rounded-xl shadow-lg mt-6 text-center">
+        <div class="bg-gray-200 p-6 rounded-xl shadow-lg mt-6 text-center">
             <h3 class="text-2xl font-bold mb-4">Past Lessons</h3>
             <div class="relative inline-block text-left">
                 <button class="bg-pink-400 text-white py-2 px-4 rounded-full hover:bg-pink-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-600" id="dropdownButton">
@@ -89,9 +95,12 @@
             </div>
         </div>
     </div>
+     <!-- Centered container for Archives button -->
+     <div class="centered-container">
+        <a href="topic.html" class="archive-button">Archives</a>
+    </div>
 
-    <!-- Archives Button -->
-    <a href="topic.html" class="archive-button">Archives</a>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.4.2/alpine.min.js" defer></script>
     <script>
