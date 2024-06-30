@@ -20,6 +20,24 @@
             border-radius: 1.5rem;
             overflow: hidden;
         }
+
+        .archive-button {
+            position: fixed;
+            bottom: 4rem; /* Adjust as needed */
+            right: 2rem; /* Adjust as needed */
+            background-color: #e60d0d; /* Tailwind color for purple-600 */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 9999px; /* Large border-radius for round shape */
+            box-shadow: 0 4px 6px rgba(190, 71, 71, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none; /* Ensure no underline */
+            display: inline-block; /* Ensure button behaves like a block element */
+        }
+        .archive-button:hover {
+            background-color: #035c0f; /* Tailwind color for purple-700 */
+            transform: scale(1.05); /* Slightly scale up on hover */
+        }
     </style>
 </head>
 <body class="bg-purple-200">
@@ -71,6 +89,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Archives Button -->
+    <a href="topic.html" class="archive-button">Archives</a>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.4.2/alpine.min.js" defer></script>
     <script>
