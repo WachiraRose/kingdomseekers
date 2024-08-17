@@ -44,6 +44,30 @@
             display: flex;
             justify-content: center;
         }
+
+        /* Fade animation */
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Apply the animation to the current lesson heading */
+        .current-lesson-heading {
+        font-family: 'Redressed', cursive; /* Change to your preferred font */
+        color: #7612c7; /* Change to your preferred color */
+        font-size: 2.5rem; /* Adjust the font size if needed */
+        animation: fadeInOut 3s infinite; /* Ensure animation runs continuously */
+    }
+
+    @keyframes fadeInOut {
+        0% { opacity: 0; }
+        50% { opacity: 1; }
+        100% { opacity: 0; }
+    }
     </style>
 </head>
 <body class="bg-purple-300">
@@ -66,12 +90,11 @@
 
             <div class="bg-gray-200 p-6 rounded-card shadow-lg text-center">
                 <div class="rounded-card mx-auto mb-4">
-                    <!--img src="img/current-lesson.jpg" alt="Current Lesson Image" class="w-full h-auto"-->
-                    <h2 class="text-2xl font-bold mb-4">Current Lesson:</h2>
+                    <h2 class="current-lesson-heading text-2xl font-bold mb-4">Current Lesson:</h2>
                 </div>
-                <h6 class="text-2xl  mb-2">
-                    <a href="In_the_Beginning/Part7/beginning7.html" class="text-pink-500 hover:text-blue-800">
-                        In the Beginning Part 7
+                <h6 class="text-2xl mb-2">
+                    <a href="In_the_Beginning/Part8/beginning8.html" class="text-green-500 hover:text-blue-800">
+                        In the Beginning Part 8
                     </a>
                 </h6>
             </div>
@@ -90,17 +113,17 @@
                     <a href="In_the_Beginning/Part4/beginning4.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">In the Beginning part 4</a>
                     <a href="In_the_Beginning/Part5/beginning5.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">In the Beginning part 5</a>
                     <a href="In_the_Beginning/Part6/beginning6.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">In the Beginning part 6</a>
+                    <a href="In_the_Beginning/Part7/beginning7.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">In the Beginning part 7</a>
                     <!-- Add more topics as needed -->
                 </div>
             </div>
         </div>
     </div>
-     <!-- Centered container for Archives button -->
-     <div class="centered-container">
+
+    <!-- Centered container for Archives button -->
+    <div class="centered-container">
         <a href="topic.html" class="archive-button">Archives</a>
     </div>
-
-    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.4.2/alpine.min.js" defer></script>
     <script>
@@ -146,34 +169,27 @@
                 "It is the Spirit who gives life; the flesh profits nothing. The words that I speak to you are spirit, and they are life. - John 6:63",
                 "In the beginning God created the heavens and the earth. -Gen 1:1",
                 "Hear, O Israel: The LORD our God, the LORD is one! - Deut 6:4",
-                "For there are three that bear witness in heaven: the Father, the Word, and the Holy Spirit; and these three are one. - 1 Jn 5:7",
-                "God is Spirit, and those who worship Him must worship in spirit and truth. -John 4:24",
-                "But the natural man (the unsaved) does not receive the things of the Spirit of God, for they are foolishness to him; nor can he know them, because they are spiritually discerned. - 1 Cor 2:14",
-                "Be diligent to present yourself approved to God, a worker who does not need to be ashamed, rightly dividing the word of truth - 2 Tim 2:15",
-                // Add more verses as needed
+                "For there are three that bear witness in heaven: the Father, the Word, and the Holy Spirit; and these three are one.- 1 John 5:7",
+                "But Jesus answered him, saying, “It is written, ‘Man shall not live by bread alone, but by every word of God.’ - Luke 4:4",
+                "But without faith it is impossible to please Him, for he who comes to God must believe that He is, and that He is a rewarder of those who diligently seek Him. - Heb 11:6",
             ];
 
-            return bibleVerses[Math.floor(Math.random() * bibleVerses.length)];
+            const randomIndex = Math.floor(Math.random() * bibleVerses.length);
+            return bibleVerses[randomIndex];
         }
 
-        // Function to update the verse text and text color
-        function updateVerse() {
-            const verseCard = document.querySelector('.verse-card');
+        document.addEventListener('DOMContentLoaded', function() {
             const verseText = document.getElementById('verse-text');
-            const randomBgColor = getRandomColor();
-            const brightness = getBrightness(randomBgColor);
-            const textColor = brightness > 128 ? '#000000' : '#FFFFFF';
-
-            verseCard.style.backgroundColor = randomBgColor;
-            verseCard.style.color = textColor;
             verseText.textContent = getRandomVerse();
-        }
 
-        // Update verse on page load
-        updateVerse();
+            const verseCard = document.querySelector('.verse-card');
+            const randomColor = getRandomColor();
+            verseCard.style.backgroundColor = randomColor;
 
-        // Update verse every 10 seconds
-        setInterval(updateVerse, 10000);
+            // Adjust text color based on background brightness
+            const brightness = getBrightness(randomColor);
+            verseCard.style.color = brightness > 128 ? '#000000' : '#FFFFFF';
+        });
     </script>
 </body>
 </html>
