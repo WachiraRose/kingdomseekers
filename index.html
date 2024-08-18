@@ -25,7 +25,7 @@
             position:center;
             bottom: 4rem; /* Adjust as needed */
             right: 2rem; /* Adjust as needed */
-            background-color: #831843; /* Tailwind color for purple-600 */
+            background-color: #0c0c0c; /* Tailwind color for purple-600 */
             color: white;
             padding: 10px 20px;
             border-radius: 9999px; /* Large border-radius for round shape */
@@ -54,11 +54,11 @@
                 opacity: 0;
             }
         }
-
+        
         /* Apply the animation to the current lesson heading */
         .current-lesson-heading {
         font-family: 'Redressed', cursive; /* Change to your preferred font */
-        color: #7612c7; /* Change to your preferred color */
+        color: #f50707; /* Change to your preferred color */
         font-size: 2.5rem; /* Adjust the font size if needed */
         animation: fadeInOut 3s infinite; /* Ensure animation runs continuously */
     }
@@ -67,6 +67,13 @@
         0% { opacity: 0; }
         50% { opacity: 1; }
         100% { opacity: 0; }
+    }
+    /* Apply the animation to the current lesson heading */
+    .past-lesson-heading {
+        font-family: 'Redressed', cursive; /* Change to your preferred font */
+        color: #0c0b0b; /* Change to your preferred color */
+        font-size: 2.5rem; /* Adjust the font size if needed */
+        
     }
     </style>
 </head>
@@ -88,22 +95,22 @@
                 </div>
             </div>
 
-            <div class="bg-gray-200 p-6 rounded-card shadow-lg text-center">
+            <div class="bg-gray-800 p-6 rounded-card shadow-lg text-center">
                 <div class="rounded-card mx-auto mb-4">
                     <h2 class="current-lesson-heading text-2xl font-bold mb-4">Current Lesson:</h2>
                 </div>
                 <h6 class="text-2xl mb-2">
-                    <a href="In_the_Beginning/Part8/beginning8.html" class="text-green-500 hover:text-blue-800">
+                    <a href="In_the_Beginning/Part8/beginning8.html" class="text-blue-400 hover:text-blue-600">
                         In the Beginning Part 8
                     </a>
                 </h6>
             </div>
         </div>
 
-        <div class="bg-gray-200 p-6 rounded-xl shadow-lg mt-6 text-center">
-            <h3 class="text-2xl font-bold mb-4">Past Lessons</h3>
+        <div class="bg-gray-500 p-6 rounded-xl shadow-lg mt-6 text-center">
+            <h3 class="past-lesson-heading text-2xl font-bold mb-4">Past Lessons</h3>
             <div class="relative inline-block text-left">
-                <button class="bg-pink-400 text-white py-2 px-4 rounded-full hover:bg-pink-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-600" id="dropdownButton">
+                <button class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-pink-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-600" id="dropdownButton">
                     Select 
                 </button>
                 <div class="dropdown-content hidden absolute mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10" id="dropdown">
@@ -172,24 +179,36 @@
                 "For there are three that bear witness in heaven: the Father, the Word, and the Holy Spirit; and these three are one.- 1 John 5:7",
                 "But Jesus answered him, saying, “It is written, ‘Man shall not live by bread alone, but by every word of God.’ - Luke 4:4",
                 "But without faith it is impossible to please Him, for he who comes to God must believe that He is, and that He is a rewarder of those who diligently seek Him. - Heb 11:6",
+                "For whatever things were written before were written for our learning, that we through the patience and comfort of the Scriptures might have hope. Rom 15:4",
+                "Therefore lay aside all filthiness and overflow of wickedness, and receive with meekness the implanted word, which is able to save your souls. 22 But be doers of the word, and not hearers only, deceiving yourselves. James 1:21-22",
+                " Now it shall come to pass in the latter days That the mountain of the LORD'S house Shall be established on the top of the mountains and shall be exalted above the hills; And all nations shall flow to it. Isaiah 2:2",
+                " that the genuineness of your faith, being much more precious than gold that perishes, though it is tested by fire, may be found to praise, honor, and glory at the revelation of Jesus Christ… 1 Peter 1:7",
+                " Then Abram went up from Egypt, he and his wife and all that he had, and Lot with him, to the South. 2 Abram was very rich in livestock, in silver, and in gold. 3 And he went on his journey from the South as far as Bethel, to the place where his tent had been at the beginning, between Bethel and Ai, 4 to the place of the altar which he had made there at first. And there Abram called on the name of the LORD. - Gen 13: 1-4",
             ];
 
             const randomIndex = Math.floor(Math.random() * bibleVerses.length);
             return bibleVerses[randomIndex];
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const verseText = document.getElementById('verse-text');
-            verseText.textContent = getRandomVerse();
-
+        // Function to update the verse text and text color
+        function updateVerse() {
             const verseCard = document.querySelector('.verse-card');
-            const randomColor = getRandomColor();
-            verseCard.style.backgroundColor = randomColor;
+            const verseText = document.getElementById('verse-text');
+            const randomBgColor = getRandomColor();
+            const brightness = getBrightness(randomBgColor);
+            const textColor = brightness > 128 ? '#000000' : '#FFFFFF';
 
-            // Adjust text color based on background brightness
-            const brightness = getBrightness(randomColor);
-            verseCard.style.color = brightness > 128 ? '#000000' : '#FFFFFF';
-        });
+            verseCard.style.backgroundColor = randomBgColor;
+            verseCard.style.color = textColor;
+            verseText.textContent = getRandomVerse();
+        }
+
+        // Update verse on page load
+        updateVerse();
+
+        // Update verse every 10 seconds
+        setInterval(updateVerse, 10000);
+
     </script>
 </body>
 </html>
