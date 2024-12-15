@@ -23,22 +23,24 @@
         }
 
         .archive-button {
-            position:center;
-            bottom: 4rem; /* Adjust as needed */
-            right: 2rem; /* Adjust as needed */
-            background-color: #0c0c0c; /* Tailwind color for purple-600 */
-            color: white;
-            padding: 10px 20px;
-            border-radius: 9999px; /* Large border-radius for round shape */
-            box-shadow: 0 4px 6px rgba(190, 71, 71, 0.1);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            text-decoration: none; /* Ensure no underline */
-            display: inline-block; /* Ensure button behaves like a block element */
-        }
-        .archive-button:hover {
-            background-color: #035c0f; /* Tailwind color for purple-700 */
-            transform: scale(1.05); /* Slightly scale up on hover */
-        }
+    position: fixed;
+    bottom: 2rem; /* Distance from the bottom */
+    right: 2rem; /* Distance from the right */
+    background-color: #f60707;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(190, 71, 71, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.archive-button:hover {
+    background-color: #035c0f;
+    transform: scale(1.05);
+}
+
 
          /* Centering the button horizontally */
          .centered-container {
@@ -83,6 +85,24 @@
         font-size: 2.5rem; /* Adjust the font size if needed */
         
     }
+
+    /* Responsive Adjustments for Small Screens */
+    @media (max-width: 640px) {
+        .archive-button {
+            bottom: 1rem; /* Reduce bottom space */
+            right: 1rem; /* Reduce right space */
+            padding: 8px 16px; /* Smaller padding */
+            font-size: 0.875rem; /* Smaller font size */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .archive-button {
+            width: auto; /* Ensure the width fits content */
+            padding: 6px 12px; /* Further reduce padding */
+            font-size: 0.75rem; /* Smallest font size */
+        }
+    }
     </style>
 </head>
 <body class="bg-purple-300">
@@ -114,18 +134,15 @@
                 </h6>
                 <div class="mt-4"> <!-- Add some margin on top for spacing -->
                     <button onclick="window.location.href='In_the_Beginning/Part9/beginning9.html'" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                        Play
+                        PLAY
                     </button>
                 </div>
             </div>
-            
-
-        
     </div>
 
     <!-- Centered container for Archives button -->
     <div class="centered-container">
-        <a href="topic.html" class="archive-button">Archives</a>
+        <a href="topic.html" class="archive-button">ARCHIVES</a>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.4.2/alpine.min.js" defer></script>
