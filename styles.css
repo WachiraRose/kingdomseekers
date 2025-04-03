@@ -126,3 +126,83 @@ audio {
 .dropdown-submenu > a::after {
     content: "";
 }
+
+
+/* Audio Navbar Styling 
+.audio-navbar {
+    background: rgba(102, 29, 0, 0.9); /* Dark Purple 
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 0 25px rgba(0, 192, 255, 0.8); /* Cyan Glow 
+    transition: transform 0.3s ease-in-out;
+}
+
+.audio-navbar:hover {
+    transform: scale(1.05);
+}
+
+/* Audio Selector 
+#audio-select {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #1c1d1d;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#audio-select:focus {
+    outline: none;
+    box-shadow: 0 0 8px #0d0d0e;
+}
+
+/* Audio Player 
+audio {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Soft Glow 
+    background: #1E3A8A; /* Deep Blue 
+}
+
+/* Custom Button 
+.btn-custom {
+    background: linear-gradient(90deg, #00E5FF, #1E3A8A);
+    padding: 12px 24px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 192, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+}
+
+/* Equalizer Animation 
+.equalizer {
+    display: flex;
+    gap: 5px;
+}
+
+.bar {
+    width: 8px;
+    height: 25px;
+    background: #E5E7EB; /* Silver 
+    animation: equalizer 1s infinite ease-in-out;
+}
+
+.bar:nth-child(1) { animation-delay: 0.1s; }
+.bar:nth-child(2) { animation-delay: 0.2s; }
+.bar:nth-child(3) { animation-delay: 0.3s; }
+.bar:nth-child(4) { animation-delay: 0.4s; }
+.bar:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes equalizer {
+    0%, 100% { height: 25px; }
+    50% { height: 50px; }
+}
+
